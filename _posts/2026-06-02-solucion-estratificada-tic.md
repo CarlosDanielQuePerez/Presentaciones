@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Solución Estratificada"
+title: "Tarea 998: Solución estratificada de problemas en TIC"
 theme: league
 background: '#2c3e50'
 slides:

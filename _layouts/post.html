@@ -6,25 +6,33 @@
 
     <title>{{ page.title }}</title>
 
-    <!-- Estilos base de Reveal.js -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
-    <!-- Tema oscuro (Black) de Reveal.js -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/black.min.css">
 
     <style>
-        /* Ajustes para tablas y contenedores dentro de Reveal */
+        /* Evitar desbordamientos en tablas */
         .reveal table {
             margin: auto;
             border-collapse: collapse;
-            width: 90%;
+            width: 100%;
+            font-size: 0.65em; /* Tamaño ideal para que no se salga */
         }
         .reveal th, .reveal td {
-            padding: 12px;
+            padding: 8px 12px;
             border-bottom: 1px solid rgba(255,255,255,0.2);
+            text-align: left;
         }
         .reveal th {
-            background-color: rgba(255,255,255,0.1);
+            background-color: rgba(255,255,255,0.15);
         }
+        /* Ajustar listas para que no usen espacio excesivo */
+        .reveal ul {
+            font-size: 0.8em;
+            line-height: 1.4;
+        }
+        .reveal h1 { font-size: 2.2em; }
+        .reveal h2 { font-size: 1.6em; color: #4A6FA5; }
+        .reveal h3 { font-size: 1.2em; }
     </style>
 </head>
 <body>
@@ -35,14 +43,17 @@
         </div>
     </div>
 
-    <!-- Scripts de Reveal.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
     <script>
-        // Inicializar Reveal.js de forma directa
         Reveal.initialize({
             hash: true,
-            slideNumber: true,
-            transition: 'slide' // transiciones suaves
+            slideNumber: 'c/t', /* Muestra diapositiva actual / total */
+            transition: 'slide',
+            width: 1050,  /* Dimensión base fija para garantizar la proporción */
+            height: 700,
+            margin: 0.1,
+            minScale: 0.2,
+            maxScale: 2.0
         });
     </script>
 </body>

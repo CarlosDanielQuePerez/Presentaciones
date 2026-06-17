@@ -1,13 +1,49 @@
----
-layout: default
----
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
+    <title>{{ page.title }}</title>
 
-		<div class="reveal">
-			<div class="slides">
-			               
-                  {{content}}
-				
-			</div>
-		</div>
+    <!-- Estilos base de Reveal.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+    <!-- Tema oscuro (Black) de Reveal.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/black.min.css">
 
+    <style>
+        /* Ajustes para tablas y contenedores dentro de Reveal */
+        .reveal table {
+            margin: auto;
+            border-collapse: collapse;
+            width: 90%;
+        }
+        .reveal th, .reveal td {
+            padding: 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        .reveal th {
+            background-color: rgba(255,255,255,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="reveal">
+        <div class="slides">
+            {{ content }}
+        </div>
+    </div>
+
+    <!-- Scripts de Reveal.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+    <script>
+        // Inicializar Reveal.js de forma directa
+        Reveal.initialize({
+            hash: true,
+            slideNumber: true,
+            transition: 'slide' // transiciones suaves
+        });
+    </script>
+</body>
+</html>
